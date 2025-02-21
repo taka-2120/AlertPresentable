@@ -94,7 +94,7 @@ public class AlertController {
         /// On tap, close the alert.
         ///
         public static var no: Self {
-            .init(label: String(localized: String.LocalizationValue("no"), bundle: .module))
+            .init(label: String(localized: String.LocalizationValue("no"), bundle: .module), role: .cancel)
         }
 
         ///
@@ -103,7 +103,7 @@ public class AlertController {
         /// - parameter action: The custom action which is fired when the button was tapped just before close the alert.
         ///
         public static func no(action: @escaping () -> Void) -> Self {
-            .init(label: String(localized: String.LocalizationValue("no"), bundle: .module), action: action)
+            .init(label: String(localized: String.LocalizationValue("no"), bundle: .module), role: .cancel, action: action)
         }
 
         ///
