@@ -14,27 +14,36 @@ public extension View {
     /// - parameter alertPresentable: A binding class (mostly view model) inherited `AlertPresentable` protocol.
     ///
     func alert(using alertPresentable: Binding<some AlertPresentable>) -> some View {
-        modifier(CommonAlert(alertPresentable: alertPresentable))
+        modifier(CommonAlert(alertController: alertPresentable.alertController))
+    }
+
+    ///
+    /// Show native alert using a `AlertController`.
+    ///
+    /// - parameter alertController: A binding variable of `AlertController`.
+    ///
+    func alert(using alertController: Binding<AlertController>) -> some View {
+        modifier(CommonAlert(alertController: alertController))
     }
 }
 
-private struct CommonAlert<T: AlertPresentable>: ViewModifier {
-    @Binding var alertPresentable: T
+private struct CommonAlert: ViewModifier {
+    @Binding var alertController: AlertController
 
     func body(content: Content) -> some View {
         content
-            .alert(alertPresentable.alertController.title, isPresented: $alertPresentable.alertController.isPresented) {
-                ForEach(alertPresentable.alertController.actions) { action in
+            .alert(alertController.title, isPresented: $alertController.isPresented) {
+                ForEach(alertController.actions) { action in
                     Button(action.label, role: action.role) {
                         if let action = action.action {
                             action()
                             return
                         }
-                        alertPresentable.alertController.isPresented = false
+                        alertController.isPresented = false
                     }
                 }
             } message: {
-                Text(alertPresentable.alertController.message)
+                Text(alertController.message)
             }
     }
 }
