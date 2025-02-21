@@ -50,44 +50,63 @@ Show native alerts from ViewModel with ease.
 
 ## Usage
 
-1. Add `AlertPresentable` protocol to your class (like view model).
+1. Setup `AlertController`
 
-    ```swift
-    import AlertPresentable
+    - Using View Model
     
-    @Observable
-    class YourClass: AlertPresentable {
-        ...
-    }
-    ```
+        a. Add `AlertPresentable` protocol to your class (like view model).
 
-2. Add a necessary variable to your class.
+            ```swift
+            import AlertPresentable
+            
+            @Observable
+            class YourClass: AlertPresentable {
+                ...
+            }
+            ```
 
-    ```swift
-    import AlertPresentable
-    
-    @Observable
-    class YourViewModel: AlertPresentable {
-        var alertController = AlertController()
-    }
-    ```
-    
-3. Add `alert` modifier to your view.
+        b. Add a necessary variable to your class.
 
-    ```swift
-    import AlertPresentable
+            ```swift
+            import AlertPresentable
+            
+            @Observable
+            class YourViewModel: AlertPresentable {
+                var alertController = AlertController()
+            }
+            ```
+            
+        c. Add `alert` modifier to your view.
 
-    struct YourView: View {
-        @State private var viewModel = YourViewModel()
+            ```swift
+            import AlertPresentable
 
-        var body: some View {
-            yourView
-                .alert(using: viewModel)
+            struct YourView: View {
+                @State private var viewModel = YourViewModel()
+
+                var body: some View {
+                    yourView
+                        .alert(using: viewModel)
+                }
+            }
+            ```
+            
+    - Using View Only (Above 1.1.0 or later)
+        
+        ```swift
+        import AlertPresentable
+
+        struct YourView: View {
+            @State private var alertController = AlertController()
+
+            var body: some View {
+                yourView
+                    .alert(using: $alertController)
+            }
         }
-    }
-    ```
+        ```
     
-4. Call `showAlert` function to show the alert.
+2. Call `showAlert` function to show the alert.
 
     ```swift
     // Simplest alert (Show OK button)
