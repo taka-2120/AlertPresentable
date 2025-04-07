@@ -1,10 +1,3 @@
-//
-//  View+Alert.swift
-//  FTPresentation
-//
-//  Created by Yu Takahashi on 12/9/24.
-//
-
 import SwiftUI
 
 public extension View {
@@ -37,6 +30,7 @@ private struct CommonAlert: ViewModifier {
                     Button(action.label, role: action.role) {
                         if let action = action.action {
                             action()
+                            alertController.isPresented = false
                             return
                         }
                         alertController.isPresented = false
