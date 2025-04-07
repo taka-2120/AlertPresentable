@@ -53,7 +53,7 @@ Show native alerts from ViewModel with ease.
 1. Setup `AlertController`
 
     - Using View Model
-    
+
         a. Add `AlertPresentable` protocol to your class (like view model).
 
             ```swift
@@ -92,7 +92,7 @@ Show native alerts from ViewModel with ease.
             ```
             
     - Using View Only (Above 1.1.0 or later)
-        
+
         ```swift
         import AlertPresentable
 
@@ -105,7 +105,7 @@ Show native alerts from ViewModel with ease.
             }
         }
         ```
-    
+
 2. Call `showAlert` function to show the alert.
 
     ```swift
@@ -128,5 +128,5 @@ Show native alerts from ViewModel with ease.
         .init(label: "Details...") {
             // Transition to the news page...
         }
-    ])
+    ])
     ```
