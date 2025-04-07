@@ -18,9 +18,5 @@ let package = Package(
                 .process("Localizable.xcstrings"),
             ]
         ),
-        .testTarget(
-            name: "AlertPresentableTests",
-            dependencies: ["AlertPresentable"]
-        ),
     ]
 )

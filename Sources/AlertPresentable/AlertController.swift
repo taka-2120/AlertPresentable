@@ -1,18 +1,22 @@
-//
-//  AlertController.swift
-//  Components
-//
-//  Created by Yu Takahashi on 12/9/24.
-//
-
 import SwiftUI
 
-@Observable
+@MainActor @Observable
 public class AlertController {
-    public enum Mode: LocalizedStringKey {
-        case error = "error"
-        case warning = "warning"
-        case message = "message"
+    public enum Mode {
+        case error
+        case warning
+        case message
+
+        var label: String {
+            switch self {
+            case .error:
+                String(localized: String.LocalizationValue("error"), bundle: .module)
+            case .warning:
+                String(localized: String.LocalizationValue("warning"), bundle: .module)
+            case .message:
+                String(localized: String.LocalizationValue("message"), bundle: .module)
+            }
+        }
     }
 
     ///
@@ -144,7 +148,8 @@ public class AlertController {
 
     ///
     public func showAlert(mode: Mode, message: String, actions: [Action] = [.ok]) {
-        title = mode.rawValue
+        isPresented = false
+        title = "\(mode.label)"
         self.message = message
         if actions.isEmpty {
             self.actions = [.ok]
@@ -162,6 +167,7 @@ public class AlertController {
     /// - parameter actions: The actions which can be set up multiple actions including predefined ones: `ok`, `yes`, `no`, and `cancel`. If it is empty, automatically applied `ok`. Items in the left of this array are displayed on the left.
     ///
     public func showAlert(title: LocalizedStringKey, message: String, actions: [Action] = [.ok]) {
+        isPresented = false
         self.title = title
         self.message = message
         if actions.isEmpty {
