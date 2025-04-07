@@ -27,13 +27,15 @@ private struct CommonAlert: ViewModifier {
         content
             .alert(alertController.title, isPresented: $alertController.isPresented) {
                 ForEach(alertController.actions) { action in
-                    Button(action.label, role: action.role) {
+                    Button(role: action.role) {
                         if let action = action.action {
                             action()
                             alertController.isPresented = false
                             return
                         }
                         alertController.isPresented = false
+                    } label: {
+                        Text(action.label)
                     }
                 }
             } message: {
