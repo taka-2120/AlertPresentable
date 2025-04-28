@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A08D9162DA351C900A3F486 /* AlertPresentable in Frameworks */ = {isa = PBXBuildFile; productRef = 9A08D9152DA351C900A3F486 /* AlertPresentable */; };
+		9A87F7BE2DBF0A080049ABDB /* AlertPresentable in Frameworks */ = {isa = PBXBuildFile; productRef = 9A87F7BD2DBF0A080049ABDB /* AlertPresentable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A08D8FA2DA3515A00A3F486 /* AlertPresentableExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertPresentableExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A87F7BB2DBF09F50049ABDB /* AlertPresentable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AlertPresentable; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -27,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A08D9162DA351C900A3F486 /* AlertPresentable in Frameworks */,
+				9A87F7BE2DBF0A080049ABDB /* AlertPresentable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				9A08D8FC2DA3515A00A3F486 /* AlertPresentableExample */,
+				9A87F7BA2DBF09F50049ABDB /* Frameworks */,
 				9A08D8FB2DA3515A00A3F486 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +50,14 @@
 				9A08D8FA2DA3515A00A3F486 /* AlertPresentableExample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9A87F7BA2DBF09F50049ABDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A87F7BB2DBF09F50049ABDB /* AlertPresentable */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,7 +80,7 @@
 			);
 			name = AlertPresentableExample;
 			packageProductDependencies = (
-				9A08D9152DA351C900A3F486 /* AlertPresentable */,
+				9A87F7BD2DBF0A080049ABDB /* AlertPresentable */,
 			);
 			productName = AlertPresentableExample;
 			productReference = 9A08D8FA2DA3515A00A3F486 /* AlertPresentableExample.app */;
@@ -101,7 +111,7 @@
 			mainGroup = 9A08D8F12DA3515A00A3F486;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				9A08D9142DA351C900A3F486 /* XCLocalSwiftPackageReference "../../AlertPresentable" */,
+				9A87F7BC2DBF0A080049ABDB /* XCLocalSwiftPackageReference "../../AlertPresentable" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A08D8FB2DA3515A00A3F486 /* Products */;
@@ -279,7 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AlertPresentableExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -308,7 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AlertPresentableExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -337,14 +347,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		9A08D9142DA351C900A3F486 /* XCLocalSwiftPackageReference "../../AlertPresentable" */ = {
+		9A87F7BC2DBF0A080049ABDB /* XCLocalSwiftPackageReference "../../AlertPresentable" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../AlertPresentable;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9A08D9152DA351C900A3F486 /* AlertPresentable */ = {
+		9A87F7BD2DBF0A080049ABDB /* AlertPresentable */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AlertPresentable;
 		};
